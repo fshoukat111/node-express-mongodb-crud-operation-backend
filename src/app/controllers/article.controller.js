@@ -1,4 +1,8 @@
 const Article = require('../models/article.model');
+const cors = require('cors');
+const corsOptions = {
+	origin: "http://localhost:4200/article"
+};
 
 exports.createArticle = (req, res) => {
     // if (!req.body.title) {
