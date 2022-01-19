@@ -5,9 +5,9 @@ const bodyParser = require("body-parser");
 const cors = require('cors');
 const app = express();
 const allArticles = require('./src/app/routes/article.routes')
+const url  = process.env.MONGODB_URI;
 
-
-mongoose.connect('mongodb://localhost:27017/curd_operation', { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect( url || 'mongodb://localhost:27017/curd_operation', { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => {
         console.log('database conacted')
     })
